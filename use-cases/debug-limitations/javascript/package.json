@@ -1,0 +1,20 @@
+{
+  "name": "merge-sort-debug",
+  "version": "1.0.0",
+  "description": "Merge Sort Debugging Exercise",
+  "main": "merge_sort.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "debugging",
+    "algorithms",
+    "merge-sort"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

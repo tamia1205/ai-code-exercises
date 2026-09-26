@@ -1,0 +1,21 @@
+{
+  "name": "payment-processor",
+  "version": "1.0.0",
+  "description": "Payment processor with adapter pattern implementation",
+  "main": "dist/payment_processor.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "start": "ts-node src/payment_processor.ts"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.11",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.4"
+  }
+}

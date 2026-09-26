@@ -1,0 +1,44 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:latest
+    container_name: orders-postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: ecommerce
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app_user -d ecommerce"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Node.js Application
+  app:
+    image: node:22
+    container_name: orders-service
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: >
+      bash -c "npm install && tail -f /dev/null"
+    environment:
+      - NODE_ENV=development
+      - DB_USER=app_user
+      - DB_HOST=postgres
+      - DB_NAME=ecommerce
+      - DB_PASSWORD=password123
+      - DB_PORT=5432
+
+volumes:
+  postgres_data:

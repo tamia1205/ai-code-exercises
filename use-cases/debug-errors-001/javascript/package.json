@@ -1,0 +1,31 @@
+{
+  "name": "user-list-debugging-example",
+  "version": "1.0.0",
+  "description": "Example demonstrating common debugging scenarios in frontend JavaScript",
+  "main": "userList.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "start": "node -r jsdom userList.js"
+  },
+  "author": "WTC",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0"
+  },
+  "dependencies": {
+    "jsdom": "^22.1.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
+  "engines": {
+    "node": ">=14.x"
+  }
+}

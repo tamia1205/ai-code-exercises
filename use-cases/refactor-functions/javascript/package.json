@@ -1,0 +1,14 @@
+{
+  "name": "user-validator",
+  "version": "1.0.0",
+  "description": "User validation utility",
+  "main": "user_validator.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
